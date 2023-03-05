@@ -33,6 +33,7 @@
 
 #include "scene/gui/box_container.h"
 #include "scene/gui/button.h"
+#include "scene/gui/check_button.h"
 #include "scene/gui/label.h"
 #include "scene/gui/option_button.h"
 #include "scene/gui/spin_box.h"
@@ -65,6 +66,7 @@ public:
 				int line = 0;
 				float self = 0;
 				float total = 0;
+				float internal = 0;
 				int calls = 0;
 			};
 
@@ -103,6 +105,8 @@ private:
 	OptionButton *display_mode = nullptr;
 	OptionButton *display_time = nullptr;
 
+	CheckButton *display_internal_profiles = nullptr;
+
 	SpinBox *cursor_metric_edit = nullptr;
 
 	Vector<Metric> frame_metrics;
@@ -127,6 +131,8 @@ private:
 
 	void _activate_pressed();
 	void _clear_pressed();
+
+	void _internal_profiles_pressed();
 
 	String _get_time_as_text(const Metric &m, float p_time, int p_calls);
 

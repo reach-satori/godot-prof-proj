@@ -543,6 +543,13 @@ private:
 		uint64_t last_frame_call_count = 0;
 		uint64_t last_frame_self_time = 0;
 		uint64_t last_frame_total_time = 0;
+		typedef struct NativeProfile {
+			uint64_t call_count;
+			uint64_t total_time;
+			String signature;
+		} NativeProfile;
+		HashMap<String, NativeProfile> native_calls{};
+		HashMap<String, NativeProfile> last_native_calls{};
 	} profile;
 
 #endif
@@ -607,6 +614,7 @@ public:
 	Variant call(GDScriptInstance *p_instance, const Variant **p_args, int p_argcount, Callable::CallError &r_err, CallState *p_state = nullptr);
 
 #ifdef DEBUG_ENABLED
+	void _profile_native_call(uint64_t t_taken, String function_name, String instance_class_name);
 	void disassemble(const Vector<String> &p_code_lines) const;
 #endif
 

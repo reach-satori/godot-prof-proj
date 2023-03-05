@@ -139,6 +139,7 @@ void ScriptLanguageExtension::_bind_methods() {
 
 	GDVIRTUAL_BIND(_profiling_start);
 	GDVIRTUAL_BIND(_profiling_stop);
+	GDVIRTUAL_BIND(_profiling_set_save_native_calls, "opt");
 
 	GDVIRTUAL_BIND(_profiling_get_accumulated_data, "info_array", "info_max");
 	GDVIRTUAL_BIND(_profiling_get_frame_data, "info_array", "info_max");

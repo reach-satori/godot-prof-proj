@@ -459,6 +459,7 @@ public:
 	/* PROFILING FUNCTIONS */
 	/* TODO */ void profiling_start() override {}
 	/* TODO */ void profiling_stop() override {}
+	/* TODO */ void profiling_set_save_native_calls(bool opt) override{};
 	/* TODO */ int profiling_get_accumulated_data(ProfilingInfo *p_info_arr, int p_info_max) override {
 		return 0;
 	}
